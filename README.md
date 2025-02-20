@@ -36,8 +36,7 @@ Este projeto tem como objetivo aplicar técnicas de ciência de dados ao univers
 
 ## Estrutura do Projeto
 
-A organização do repositório segue uma estrutura modular para facilitar a documentação, o desenvolvimento e a colaboração:
-
+A organização do repositório segue uma estrutura modular para facilitar a documentação e o desenvolvimento:
 /dota-data-project 
 ├── README.md # Visão macro do projeto (este arquivo) 
 ├── docs/ # Documentação detalhada │ 
