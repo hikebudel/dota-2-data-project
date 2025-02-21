@@ -1,0 +1,8 @@
+# Ambiente virtual
+env/
+env_py311/
+*.pyc
+__pycache__/
+
+# Dados
+data/
