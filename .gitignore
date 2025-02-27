@@ -3,6 +3,7 @@ env/
 env_py311/
 *.pyc
 __pycache__/
+.env
 
 # Dados
 data/
