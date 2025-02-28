@@ -29,8 +29,8 @@ def process_matches(data):
 def create_matches_table(conn):
     # Cria ou substitui a tabela matches no schema dota_dw sem a coluna picks_bans
     query = """
-    DROP TABLE IF EXISTS dota_dw.match_path;
-    CREATE TABLE IF NOT EXISTS dota_dw.matches (
+    DROP TABLE IF EXISTS dota_dw.match_patch;
+    CREATE TABLE IF NOT EXISTS dota_dw.match_patch (
         match_id BIGINT PRIMARY KEY, 
         patch FLOAT
     );
@@ -45,7 +45,7 @@ def insert_matches(df, conn):
                   .itertuples(index=False, name=None))
     
     query = """
-    INSERT INTO dota_dw.matches (match_id, patch)
+    INSERT INTO dota_dw.match_patch (match_id, patch)
     VALUES %s
     ON CONFLICT (match_id) DO UPDATE SET
       patch = EXCLUDED.patch
