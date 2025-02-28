@@ -3,23 +3,19 @@ import urllib.parse
 import pandas as pd
 
 def test_explorer_query():
-    # Query SQL simples: retorna 1 linhas da tabela matches
-    query = "SELECT * FROM heroes"
+    query = "SELECT * FROM player_matches"
     
-    # Codifica a query para percent-encoding
     encoded_query = urllib.parse.quote(query)
     
-    # Monta a URL com o parâmetro 'sql'
     url = f"https://api.opendota.com/api/explorer?sql={encoded_query}"
     
-    print("URL gerada:", url)
-    
-    # Faz a requisição GET
+    print("URL:", url)
+
     response = requests.get(url)
     
     if response.status_code == 200:
         data = response.json()
-        print(data)
+        print(data['rowCount'])
     else:
         print(f"Erro {response.status_code}: {response.text}")
     
